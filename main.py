@@ -2,8 +2,8 @@ import datetime as dt
 import smtplib
 import random
 
-my_email = "anafreisa.teste@gmail.com"
-password = "Coguja20"
+my_email = EMAIL
+password = PASSWORD
 quotes_list = []
 days_of_week = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
 
@@ -19,6 +19,6 @@ with smtplib.SMTP("smtp.gmail.com") as connection:
     connection.login(user=my_email, password=password)
     connection.sendmail(
         from_addr=my_email,
-        to_addrs="anafreisa@yahoo.com",
+        to_addrs=EMAIL,
         msg=f"Subject:It's {days_of_week[day_of_week]}\n\n{random.choice(quotes_list)}"
     )
